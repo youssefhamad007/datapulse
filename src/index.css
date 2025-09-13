@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Dashboard Design System - All colors, gradients, fonts, animations defined here */
+
+@layer base {
+  :root {
+    /* Light mode variables - Softer, more modern colors */
+    --background: 0 0% 98%;
+    --background-secondary: 240 4.8% 95.9%;
+    --foreground: 240 10% 3.9%;
+    
+    /* Glass morphism surfaces */
+    --glass: 0 0% 100%;
+    --glass-border: 240 5.9% 90%;
+    
+    /* Card surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --card-border: 240 5.9% 90%;
+    
+    /* Brand Colors - Blue/Purple Gradient Theme */
+    --primary: 262 83% 58%;
+    --primary-glow: 250 100% 75%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    
+    /* Interactive states */
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    
+    /* Status colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+    
+    /* Form elements */
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 262 83% 58%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(250 100% 75%));
+    --gradient-secondary: linear-gradient(135deg, hsl(240 15% 12%), hsl(240 10% 8%));
+    --gradient-glass: linear-gradient(135deg, 
+      hsla(240, 20%, 15%, 0.1), 
+      hsla(240, 20%, 8%, 0.1)
+    );
+    
+    /* Shadows with glow effects */
+    --shadow-sm: 0 1px 2px 0 hsl(240 10% 4% / 0.1);
+    --shadow-md: 0 4px 6px -1px hsl(240 10% 4% / 0.1), 0 2px 4px -1px hsl(240 10% 4% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(240 10% 4% / 0.1), 0 4px 6px -2px hsl(240 10% 4% / 0.05);
+    --shadow-glow: 0 0 20px hsl(262 83% 58% / 0.2);
+    --shadow-glow-intense: 0 0 40px hsl(262 83% 58% / 0.3);
+    
+    /* Animation variables */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    --bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Sidebar specific */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5% 84%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 240 5% 96%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 240 5.9% 90%;
+    --sidebar-ring: 262 83% 58%;
+    
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark mode variables */
+    --background: 240 10% 4%;
+    --background-secondary: 240 8% 6%;
+    --foreground: 240 5% 96%;
+    
+    /* Glass morphism surfaces */
+    --glass: 240 10% 8%;
+    --glass-border: 240 20% 20%;
+    
+    /* Card surfaces */
+    --card: 240 10% 6%;
+    --card-foreground: 240 5% 96%;
+    --card-border: 240 15% 12%;
+    
+    /* Brand Colors - Blue/Purple Gradient Theme */
+    --primary: 262 83% 58%;
+    --primary-glow: 250 100% 75%;
+    --primary-foreground: 240 5% 96%;
+    
+    --secondary: 240 15% 12%;
+    --secondary-foreground: 240 5% 84%;
+    
+    /* Interactive states */
+    --muted: 240 15% 12%;
+    --muted-foreground: 240 5% 64%;
+    
+    --accent: 262 83% 58%;
+    --accent-foreground: 240 5% 96%;
+    
+    /* Status colors */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 240 5% 96%;
+    
+    --success: 142 76% 36%;
+    --success-foreground: 240 5% 96%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 240 10% 4%;
+    
+    /* Form elements */
+    --border: 240 15% 12%;
+    --input: 240 15% 12%;
+    --ring: 262 83% 58%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(250 100% 75%));
+    --gradient-secondary: linear-gradient(135deg, hsl(240 15% 12%), hsl(240 10% 8%));
+    --gradient-glass: linear-gradient(135deg, 
+      hsla(240, 20%, 15%, 0.1), 
+      hsla(240, 20%, 8%, 0.1)
+    );
+    
+    /* Shadows with glow effects */
+    --shadow-sm: 0 1px 2px 0 hsl(240 10% 4% / 0.3);
+    --shadow-md: 0 4px 6px -1px hsl(240 10% 4% / 0.4), 0 2px 4px -1px hsl(240 10% 4% / 0.3);
+    --shadow-lg: 0 10px 15px -3px hsl(240 10% 4% / 0.4), 0 4px 6px -2px hsl(240 10% 4% / 0.3);
+    --shadow-glow: 0 0 20px hsl(262 83% 58% / 0.3);
+    --shadow-glow-intense: 0 0 40px hsl(262 83% 58% / 0.5);
+    
+    /* Sidebar specific */
+    --sidebar-background: 240 10% 4%;
+    --sidebar-foreground: 240 5% 84%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 240 5% 96%;
+    --sidebar-accent: 240 15% 12%;
+    --sidebar-accent-foreground: 240 5% 84%;
+    --sidebar-border: 240 15% 12%;
+    --sidebar-ring: 262 83% 58%;
+  }
+
+  /* Data theme attribute support */
+  [data-theme="light"] {
+    --background: 0 0% 98%;
+    --background-secondary: 240 4.8% 95.9%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --card-border: 240 5.9% 90%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5% 84%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 240 5.9% 90%;
+  }
+
+  [data-theme="dark"] {
+    --background: 240 10% 4%;
+    --background-secondary: 240 8% 6%;
+    --foreground: 240 5% 96%;
+    --card: 240 10% 6%;
+    --card-foreground: 240 5% 96%;
+    --card-border: 240 15% 12%;
+    --muted: 240 15% 12%;
+    --muted-foreground: 240 5% 64%;
+    --border: 240 15% 12%;
+    --input: 240 15% 12%;
+    --sidebar-background: 240 10% 4%;
+    --sidebar-foreground: 240 5% 84%;
+    --sidebar-accent: 240 15% 12%;
+    --sidebar-accent-foreground: 240 5% 84%;
+    --sidebar-border: 240 15% 12%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body {
+    height: 100% !important;
+    min-height: 100% !important;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    overflow-x: hidden;
+  }
+  
+  /* Ensure proper sidebar layout */
+  .group\/sidebar-wrapper {
+    display: flex !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    width: 100%;
+  }
+  
+  /* Ensure sidebar takes full height */
+  [data-sidebar="sidebar"] {
+    height: 100vh !important;
+    min-height: 100vh !important;
+  }
+  
+  /* Ensure sidebar content fills full height */
+  [data-sidebar="content"] {
+    height: 100% !important;
+    min-height: 100% !important;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 767px) {
+    /* Ensure mobile layout works properly */
+    .group\/sidebar-wrapper {
+      flex-direction: row !important;
+      height: 100vh !important;
+      background-color: hsl(var(--background)) !important;
+    }
+    
+    /* Hide desktop sidebar on mobile - use more specific selector */
+    .group\/sidebar-wrapper .group.peer {
+      display: none !important;
+    }
+    
+    /* Mobile sidebar sheet styling */
+    [data-sidebar="sidebar"][data-mobile="true"] {
+      height: 100vh !important;
+      min-height: 100vh !important;
+    }
+    
+    /* Ensure main content takes full width on mobile */
+    .group\/sidebar-wrapper > div:last-child {
+      width: 100% !important;
+      margin-left: 0 !important;
+      flex: 1 !important;
+      background-color: hsl(var(--background)) !important;
+    }
+    
+    /* Mobile header adjustments */
+    header {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+      background-color: hsl(var(--background)) !important;
+    }
+    
+    /* Mobile search bar adjustments */
+    header form {
+      max-width: 100% !important;
+    }
+    
+    /* Ensure main content is visible */
+    main {
+      background-color: hsl(var(--background)) !important;
+      color: hsl(var(--foreground)) !important;
+      min-height: 100vh !important;
+    }
+    
+    /* Debug: Ensure body and html are visible */
+    body, html {
+      background-color: hsl(var(--background)) !important;
+      color: hsl(var(--foreground)) !important;
+    }
+    
+    /* Force visibility of main content area */
+    .group\/sidebar-wrapper > div:last-child > main {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+  }
+  
+  /* Fallback: Ensure content is always visible on small screens */
+  @media (max-width: 1024px) {
+    .group\/sidebar-wrapper > div:last-child {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+  }
+}
+
+@layer components {
+  /* Glass morphism effect */
+  .glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--glass-border));
+  }
+  
+  /* Animated gradient backgrounds */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  /* Glow effects */
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glow-intense {
+    box-shadow: var(--shadow-glow-intense);
+  }
+  
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn var(--transition-normal) ease-out;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp var(--transition-normal) ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn var(--transition-fast) var(--bounce);
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight var(--transition-normal) ease-out;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  .animate-bounce-in {
+    animation: bounceIn 0.6s ease-out;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 0.5s ease-out;
+  }
+  
+  .animate-rotate-in {
+    animation: rotateIn 0.6s ease-out;
+  }
+  
+  /* Hover animations */
+  .hover-scale {
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .hover-glow {
+    transition: box-shadow var(--transition-normal);
+  }
+  
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Sequential animation delays */
+  .delay-0 { animation-delay: 0ms; }
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+  .delay-700 { animation-delay: 700ms; }
+  .delay-800 { animation-delay: 800ms; }
+  .delay-900 { animation-delay: 900ms; }
+  .delay-1000 { animation-delay: 1000ms; }
+  .delay-1100 { animation-delay: 1100ms; }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(262 83% 58% / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px hsl(262 83% 58% / 0.6), 0 0 40px hsl(250 100% 75% / 0.4);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
